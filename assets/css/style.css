@@ -1,3 +1,28 @@
 @import "1-normalize.css";
 @import "2-typescale.css";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  color: black;
+}
+
+
+
+#time {
+  font-size: 100px;
+}
+
+#name:hover {
+  outline: auto;
+}
