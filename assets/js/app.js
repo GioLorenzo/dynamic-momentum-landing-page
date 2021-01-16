@@ -28,3 +28,6 @@ function showTime() {
   setTimeout(showTime, 1000);
 }
 
+//Add zero in front of single digit values
+const addZero = n => ((parseInt(n, 10) < 10) ? '0' : '') + n;
+
