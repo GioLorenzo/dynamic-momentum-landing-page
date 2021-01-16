@@ -1,9 +1,11 @@
 // Assign DOM elements
 const time = document.getElementById('time'),
+  timeWrap = document.getElementById('time-wrap'),
   greeting = document.getElementById('greeting'),
   focus = document.getElementById('focus'),
-  amOrPm = document.getElementById('am-pm');
-
+  amOrPm = document.getElementById('am-pm'),
+  focusWrap = document.querySelector('.focus-wrap')
+  headline = document.querySelector('.headline');
 let name = document.getElementById('name');
 
 
@@ -40,26 +42,36 @@ const setBg = () => {
   if (hour < 12) {
     //Morning
     document.body.style.backgroundImage = "url('../assets/img/Morning.jpg')";
+    timeWrap.style.color = 'white'
     greeting.textContent = 'Good Morning';
-  } else if (hour < 18) {
+    headline.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    headline.style.color = 'white';
+    focusWrap.style.color = 'white';
+  } else if (hour < 19) {
     // Afternoon
+    timeWrap.style.color = 'white';
     document.body.style.backgroundImage = "url('../assets/img/Afternoon.jpg')";
     greeting.textContent = 'Good Afternoon';
     document.body.style.color = 'white';
   } else {
     // Evening
     document.body.style.backgroundImage = "url('../assets/img/night.jpg')";
+    focusWrap.style.color = 'white';
     greeting.textContent = 'Good Evening';
     document.body.style.color = 'white';
+    timeWrap.style.color = 'black';
+    headline.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
   }
 }
 
 // Get Name
 function getName() {
   if (localStorage.getItem('name') === null) {
-    name.textContent = '[Your Name]';
+    name.textContent = '[Your Name Here]';
+    name.style.opacity = '.4';
   } else {
     name.textContent = localStorage.getItem('name');
+    name.style.color = 'rgba(255, 255, 255, 1)';
   }
 }
 
@@ -67,8 +79,10 @@ function getName() {
 function getFocus() {
   if (localStorage.getItem('focus') === null) {
     focus.textContent = '[Enter Focus Here]';
+    focus.style.opacity = '.4';
   } else {
     focus.textContent = localStorage.getItem('focus');
+    focus.style.color = 'rgba(255, 255, 255, 1)';
   }
 } 
 
@@ -77,19 +91,23 @@ function setName(e) {
   if (e.type === 'keypress') {
     if (e.which == 13 || e.keyCode == 13) {
       if (name.textContent.length == 0) {
+        name.style.opacity = '.4';
         name.textContent = '[Your Name]';
         name.blur();
       } else {
         localStorage.setItem('name', e.target.innerText);
+        name.style.opacity = '1';
         name.blur();
       }
     }
   } else {
     if (name.textContent.length == 0) {
       name.textContent = '[Your Name]';
+      name.style.opacity = '.4';
       name.blur();
     } else {
       localStorage.setItem('name', e.target.innerText);
+      name.style.opacity = '1';
     }
   }
 }
@@ -100,18 +118,22 @@ function setFocus(e) {
     if (e.which == 13 || e.keyCode == 13) {
       if (focus.textContent.length == 0) {
         focus.textContent = '[Enter Focus Here]';
+        focus.style.opacity = '.6';
         focus.blur();
       } else {
         localStorage.setItem('focus', e.target.innerText);
+        focus.style.opacity = '1';
         focus.blur();
       }
     }
   } else {
     if (focus.textContent.length == 0) {
       focus.textContent = '[Enter Focus Here]';
+      focus.style.opacity = '.6';
       focus.blur();
     } else {
       localStorage.setItem('focus', e.target.innerText);
+      focus.style.opacity = '1';
     }
   }
 }

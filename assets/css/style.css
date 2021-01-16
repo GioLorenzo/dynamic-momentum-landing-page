@@ -14,7 +14,7 @@ body {
   justify-content: center;
   text-align: center;
   height: 100vh;
-  color: black;
+  color: rgb(0, 0, 0);
   background-position: bottom;
   background-size: cover;
 }
@@ -35,21 +35,24 @@ body {
 }
 
 #time {
-  font-size: 100px;
-  opacity: 0.9;
+  font-size: 120px;
 }
 
 #am-pm {
   font-size: 65px;
   position: relative;
   right: 0;
-  opacity: 0.9;
 }
 
 .headline {
   margin: 0 0 50px 0;
   line-height: 2em;
   display: table; 
+  font-size: 90px;
+  line-height: 10rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 60px;
+  padding: 0 30px 0 30px;
 }
 
 #greeting {
@@ -85,7 +88,7 @@ body {
 #focus,
 h4 {
   margin: 0;
-  opacity: 0.8;
+  opacity: 1;
   overflow: visible;
 }
 
