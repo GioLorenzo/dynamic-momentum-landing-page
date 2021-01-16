@@ -17,12 +17,44 @@ body {
   color: black;
 }
 
-
+#time-wrap {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 520px;
+  text-align: center;
+}
 
 #time {
   font-size: 100px;
 }
 
+#am-pm {
+  font-size: 65px;
+  position: relative;
+  right: 0;
+}
+
+.headline {
+  margin: 0 0 50px 0;
+  line-height: 2em;
+}
+
+#focus,
+h4 {
+  margin: 0;
+  opacity: 0.6;
+}
+
+#name {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  
+}
+
 #name:hover {
-  outline: auto;
+  cursor:pointer;
 }
