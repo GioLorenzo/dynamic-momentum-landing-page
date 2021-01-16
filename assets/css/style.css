@@ -15,6 +15,13 @@ body {
   text-align: center;
   height: 100vh;
   color: black;
+  background-position: bottom;
+  background-size: cover;
+}
+
+::selection{
+  background: none;
+  
 }
 
 #time-wrap {
@@ -29,12 +36,14 @@ body {
 
 #time {
   font-size: 100px;
+  opacity: 0.9;
 }
 
 #am-pm {
   font-size: 65px;
   position: relative;
   right: 0;
+  opacity: 0.9;
 }
 
 .headline {
@@ -42,19 +51,34 @@ body {
   line-height: 2em;
 }
 
-#focus,
-h4 {
-  margin: 0;
-  opacity: 0.6;
+#greeting {
+  cursor: default;
 }
 
 #name {
   margin: 0;
   padding: 0;
-  line-height: 0;
-  
 }
 
-#name:hover {
-  cursor:pointer;
+#name:focus {
+  outline: none;
 }
+
+#name::selection {
+  background-color: pink;
+}
+
+#focus:focus {
+  outline: none;
+}
+
+#focus::selection {
+  background: pink;
+}
+
+#focus,
+h4 {
+  margin: 0;
+  opacity: 0.8;
+}
+
