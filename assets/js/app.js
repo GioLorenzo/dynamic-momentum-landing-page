@@ -34,6 +34,10 @@ function showTime() {
 // Add zero in front of single digit values
 const addZero = n => ((parseInt(n, 10) < 10) ? '0' : '') + n;
 
+// Delete content on focus
+
+
+
 
 // Set Background and Greeting
 const setBg = () => {
@@ -138,6 +142,11 @@ function setFocus(e) {
   }
 }
 
+// Highlight on Focus
+
+function eraseText(id) {
+    document.getElementById(id).innerText = "";
+}
 
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
