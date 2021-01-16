@@ -1,9 +1,10 @@
 // Assign DOM elements
 const time = document.getElementById('time'),
   greeting = document.getElementById('greeting'),
-  name = document.getElementById('name'),
   focus = document.getElementById('focus'),
   amOrPm = document.getElementById('am-pm');
+
+let name = document.getElementById('name');
 
 
 // Show Time
@@ -56,30 +57,40 @@ const setBg = () => {
 // Get Name
 function getName() {
   if (localStorage.getItem('name') === null) {
-    name.textContent = '[Your Name]'
+    name.textContent = '[Your Name]';
   } else {
     name.textContent = localStorage.getItem('name');
   }
 }
 
+// Get Focus
+function getFocus() {
+  if (localStorage.getItem('focus') === null) {
+    focus.textContent = '[Enter Focus Here]';
+  } else {
+    focus.textContent = localStorage.getItem('focus');
+  }
+} 
+
 // Set Name
 function setName(e) {
   if (e.type === 'keypress') {
     if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('name', e.target.innerText);
-      name.blur();
+      if (name.textContent.length == 0) {
+        name.textContent = '[Your Name]';
+        name.blur();
+      } else {
+        localStorage.setItem('name', e.target.innerText);
+        name.blur();
+      }
     }
   } else {
-    localStorage.setItem('name', e.target.innerText);
-  }
-}
-
-// Get Focus
-function getFocus() {
-  if (localStorage.getItem('name') === null) {
-    focus.textContent = '[Enter Focus Here]'
-  } else {
-    focus.textContent = localStorage.getItem('focus');
+    if (name.textContent.length == 0) {
+      name.textContent = '[Your Name]';
+      name.blur();
+    } else {
+      localStorage.setItem('name', e.target.innerText);
+    }
   }
 }
 
@@ -87,11 +98,21 @@ function getFocus() {
 function setFocus(e) {
   if (e.type === 'keypress') {
     if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', e.target.innerText);
-      focus.blur();
+      if (focus.textContent.length == 0) {
+        focus.textContent = '[Enter Focus Here]';
+        focus.blur();
+      } else {
+        localStorage.setItem('focus', e.target.innerText);
+        focus.blur();
+      }
     }
   } else {
-    localStorage.setItem('focus', e.target.innerText);
+    if (focus.textContent.length == 0) {
+      focus.textContent = '[Enter Focus Here]';
+      focus.blur();
+    } else {
+      localStorage.setItem('focus', e.target.innerText);
+    }
   }
 }
 
