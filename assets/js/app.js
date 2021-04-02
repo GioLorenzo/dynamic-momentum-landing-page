@@ -95,8 +95,8 @@ function setName(e) {
   if (e.type === 'keypress') {
     if (e.which == 13 || e.keyCode == 13) {
       if (name.textContent.length == 0) {
-        name.style.opacity = '.4';
         name.textContent = '[Your Name]';
+        name.style.opacity = '.4';
         name.blur();
       } else {
         localStorage.setItem('name', e.target.innerText);
@@ -108,7 +108,6 @@ function setName(e) {
     if (name.textContent.length == 0) {
       name.textContent = '[Your Name]';
       name.style.opacity = '.4';
-      name.blur();
     } else {
       localStorage.setItem('name', e.target.innerText);
       name.style.opacity = '1';
