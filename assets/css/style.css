@@ -1,0 +1,95 @@
+@import "1-normalize.css";
+@import "2-typescale.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  color: rgb(0, 0, 0);
+  background-position: bottom;
+  background-size: cover;
+}
+
+::selection{
+  background: none;
+  
+}
+
+#time-wrap {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 520px;
+  text-align: center;
+}
+
+#time {
+  font-size: 90px;
+}
+
+#am-pm {
+  font-size: 65px;
+  position: relative;
+  right: 0;
+}
+
+.headline {
+  margin: 0 0 50px 0;
+  line-height: 2em;
+  display: table; 
+  font-size: 90px;
+  line-height: 10rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 60px;
+  padding: 0 30px 0 30px;
+}
+
+#greeting {
+  cursor: default;
+}
+
+#name {
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  line-height: normal;
+}
+
+#name:focus {
+  outline: none;
+}
+
+#name::selection {
+  background-color: pink;
+}
+
+.focus-wrap {
+  display: table;
+}
+
+#focus:focus {
+  outline: none;
+}
+
+#focus::selection {
+  background: pink;
+}
+
+#focus,
+h4 {
+  margin: 0;
+  opacity: 1;
+  overflow: visible;
+}
+

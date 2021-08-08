@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Welcome</title>
+</head>
+<body>
+    <div id="time-wrap">
+        <time id="time">Time Unavailable</time>
+        <span id="am-pm"></span>
+    </div>
+
+    <h2 class="headline">
+        <span id="greeting">Good Afternoon</span>
+        <span>&nbsp;</span>
+        <span id="name" contenteditable="true" spellcheck="false" onclick="javascript:eraseText('name');"></span>
+        <span>!</span>
+    </h2>
+
+    <div class="focus-wrap">
+        <h4>What is your focus for today?</h3>
+        <h5 id="focus" contenteditable="true" spellcheck="false" onclick="javascript:eraseText('focus');"></h3>
+    </div>
+
+<script src="./assets/js/app.js" type="text/javascript"></script>      
+</body>
+</html>
