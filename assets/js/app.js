@@ -72,7 +72,7 @@ const setBg = () => {
 function getName() {
   if (localStorage.getItem('name') === null) {
     name.textContent = '[Your Name Here]';
-    name.style.opacity = '.4';
+    name.style.opacity = '.6';
   } else {
     name.textContent = localStorage.getItem('name');
     name.style.color = 'rgba(255, 255, 255, 1)';
@@ -83,7 +83,7 @@ function getName() {
 function getFocus() {
   if (localStorage.getItem('focus') === null) {
     focus.textContent = '[Enter Focus Here]';
-    focus.style.opacity = '.4';
+    focus.style.opacity = '.6';
   } else {
     focus.textContent = localStorage.getItem('focus');
     focus.style.color = 'rgba(255, 255, 255, 1)';
@@ -96,7 +96,7 @@ function setName(e) {
     if (e.which == 13 || e.keyCode == 13) {
       if (name.textContent.length == 0) {
         name.textContent = '[Your Name]';
-        name.style.opacity = '.4';
+        name.style.opacity = '.6';
         name.blur();
       } else {
         localStorage.setItem('name', e.target.innerText);
@@ -107,7 +107,7 @@ function setName(e) {
   } else {
     if (name.textContent.length == 0) {
       name.textContent = '[Your Name]';
-      name.style.opacity = '.4';
+      name.style.opacity = '.6';
     } else {
       localStorage.setItem('name', e.target.innerText);
       name.style.opacity = '1';
